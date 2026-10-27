@@ -86,7 +86,7 @@ def test_quota_table_strings(quota):
 def test_quota_verdict(quota):
     kind, text = ev.verdict_quota(quota)
     assert text == ("Quotenregel verletzt (über alle 1.200 Instanzen): Jefferson 44,2 %, Huntington–Hill 11,2 %, Webster 1,3 %, Hamilton 0,0 %, Quotenmethode 0,0 %. "
-                    "Bei Huntington–Hill löst der Mindestsitz die Verstöße aus: haben alle Verbände eine Quote von mindestens 1 (420 Instanzen), sind es 4 Verstöße (1,0 %).")
+                    "Bei Huntington–Hill treten die Verstöße vor allem auf, wenn ein Verband eine Quote unter 1 hat: haben alle Verbände eine Quote von mindestens 1 (420 Instanzen), sind es 4 Verstöße (1,0 %).")
 
 
 # --- Reihe 3: Bevölkerungsparadox und Unterschiede -------------------------------------------------------------------------------------------

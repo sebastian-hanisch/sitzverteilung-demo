@@ -236,7 +236,7 @@ def verdict_quota(rows):
     hh_big = sum(r["hh_viol_big"] for r in rows)
     text = (f"Quotenregel verletzt (über alle {thousands(tot)} Instanzen): Jefferson {pct(share['jefferson'])}, Huntington–Hill {pct(share['hh'])}, Webster {pct(share['webster'])}, "
             f"Hamilton {pct(share['hamilton'])}, Quotenmethode {pct(share['quote'])}. "
-            f"Bei Huntington–Hill löst der Mindestsitz die Verstöße aus: haben alle Verbände eine Quote von mindestens 1 ({thousands(n_big)} Instanzen), sind es {hh_big} Verstöße ({pct(hh_big / n_big if n_big else 0.0)}).")
+            f"Bei Huntington–Hill treten die Verstöße vor allem auf, wenn ein Verband eine Quote unter 1 hat: haben alle Verbände eine Quote von mindestens 1 ({thousands(n_big)} Instanzen), sind es {hh_big} Verstöße ({pct(hh_big / n_big if n_big else 0.0)}).")
     return "warning", text
 
 

@@ -131,7 +131,7 @@ st.markdown("---")
 
 st.subheader("➗ Dieselbe Verteilung als Divisor")
 st.markdown(
-    "Jefferson, Webster und Huntington–Hill sind **Divisormethoden**: es gibt eine Zahl d (Mitglieder je Sitz), sodass jeder Verband **Mitglieder geteilt durch d** erhält, gerundet nach der Regel des Verfahrens. "
+    "Jefferson, Webster und Huntington–Hill sind **Divisormethoden**: es gibt (außer bei Gleichstand an der Sitzgrenze) eine Zahl d (Mitglieder je Sitz), sodass jeder Verband **Mitglieder geteilt durch d** erhält, gerundet nach der Regel des Verfahrens. "
     "Die Tabelle nennt den Bereich aller Divisoren, die genau die Verteilung oben ergeben (die untere Grenze gehört nicht dazu, die obere schon). Hamilton und die Quotenmethode sind keine Divisormethoden."
 )
 if ev.divisor_rows(a):
@@ -235,10 +235,10 @@ st.markdown(
 |---|---|---|
 | **Die Hausgröße steht fest** | Die Satzung nennt die Zahl der Sitze; wächst sie, kann Hamilton einem Verband Sitze nehmen (Alabama-Paradox). | diese Demo |
 | **Mitgliederzahlen sind genau und gelten zum Stichtag** | Zählfehler und Stichtage ändern die Verteilung; wer zwischen Stichtagen wächst, kann bei Hamilton und der Quotenmethode verlieren (Bevölkerungsparadox). | diese Demo |
-| **Gleichstände entscheidet die kleinere Verbandsnummer** | Satzungen entscheiden meist per Los oder nach einer festen Regel; die Zahl der Gleichstände hängt von den Zahlen ab, nicht vom Verfahren. | – |
+| **Gleichstände entscheidet die kleinere Verbandsnummer** | Satzungen entscheiden meist per Los oder nach einer festen Regel; Gleichstände entstehen vor allem bei gleichen oder vielfachen Mitgliederzahlen; wie oft, hängt auch vom Verfahren ab. | – |
 | **Ein Verband darf auch leer ausgehen** | Außer bei Huntington–Hill (ein Sitz sicher) bekommen sehr kleine Verbände keinen Sitz; wer einen Mindestsitz verlangt, zahlt mit der Quotenregel. | diese Demo |
 | **Die Quotenmethode ist eine eigene Ausführung** | Balinski und Young beschreiben das Verfahren allgemein; die Demo setzt es mit Jefferson als Rangfolge um, andere Ausführungen können abweichen. | – |
-| **Kein Verfahren kann alles** | Quotenregel und Bevölkerungsmonotonie lassen sich nach Balinski und Young nicht zugleich erfüllen (aus dem Gedächtnis); die Demo zeigt, welches Opfer jedes Verfahren bringt. | `wahlaxiome-demo` |
+| **Kein Verfahren kann alles** | Quotenregel und Bevölkerungsmonotonie lassen sich nach Balinski und Young nicht zugleich erfüllen (ab vier Verbänden; aus dem Gedächtnis); die Demo zeigt, welches Opfer jedes Verfahren bringt. | `wahlaxiome-demo` |
 | **Modell, kein Befund über Verbände** | Die Zahlen sagen, was die Rechnung für erzeugte oder eingegebene Mitgliederzahlen liefert, nicht, wie ein bestimmter Beirat verteilen sollte. | – |
 """
 )
@@ -252,7 +252,7 @@ with st.expander("📐 Mathematische Formulierung"):
 
 **Hamilton.** $s_i = \lfloor q_i \rfloor$, die übrigen $h - \sum_i \lfloor q_i \rfloor$ Sitze an die größten Reste $q_i - \lfloor q_i \rfloor$.
 
-**Divisormethoden.** Es gibt einen Divisor $d$ mit $s_i = [\,p_i / d\,]$ und $\sum_i s_i = h$. Jefferson rundet ab, Webster rundet kaufmännisch, Huntington–Hill rundet bei $\sqrt{s(s+1)}$ (mindestens ein Sitz). Als Rangfolge je nächster Sitz:
+**Divisormethoden.** Es gibt (außer bei Gleichstand an der Sitzgrenze) einen Divisor $d$ mit $s_i = [\,p_i / d\,]$ und $\sum_i s_i = h$. Jefferson rundet ab, Webster rundet kaufmännisch, Huntington–Hill rundet bei $\sqrt{s(s+1)}$ (mindestens ein Sitz). Als Rangfolge je nächster Sitz:
 
 $$ \text{Jefferson: } \frac{p_i}{s_i + 1}, \qquad \text{Webster: } \frac{p_i}{s_i + 1/2}, \qquad \text{Huntington–Hill: } \frac{p_i}{\sqrt{s_i (s_i + 1)}} $$
 

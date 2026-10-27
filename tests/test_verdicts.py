@@ -141,7 +141,7 @@ def test_verdict_quota():
     kind, text = ev.verdict_quota(_quota_rows(hh_big=2))
     assert kind == "warning" and text == (
         "Quotenregel verletzt (über alle 200 Instanzen): Jefferson 50,0 %, Huntington–Hill 20,0 %, Webster 5,0 %, Hamilton 0,0 %, Quotenmethode 0,0 %. "
-        "Bei Huntington–Hill löst der Mindestsitz die Verstöße aus: haben alle Verbände eine Quote von mindestens 1 (200 Instanzen), sind es 4 Verstöße (2,0 %).")
+        "Bei Huntington–Hill treten die Verstöße vor allem auf, wenn ein Verband eine Quote unter 1 hat: haben alle Verbände eine Quote von mindestens 1 (200 Instanzen), sind es 4 Verstöße (2,0 %).")
 
 
 def test_verdict_quota_without_instances_of_the_split_does_not_divide_by_zero():
