@@ -59,9 +59,22 @@ Ein **Beirat mit h Sitzen** wird auf **Verbände** verteilt, im Verhältnis zu i
 Die Demo rechnet alle fünf **ganzzahlig und exakt** und zeigt, **was dabei schiefgehen kann**: ein Verband bekommt weniger als seine **abgerundete** oder mehr als seine **aufgerundete Quote** (**Quotenregel**), ein Verband **verliert einen Sitz, wenn das Haus wächst** (**Alabama-Paradox**), oder er verliert, **obwohl er stärker wächst als ein anderer** (**Bevölkerungsparadox**).
 Verwandt: `wahlregeln-demo` (Mehrheitsregeln bei Wahlen), `wahlaxiome-demo` (welche Eigenschaften sich ausschließen), `gemeinsames-budget-demo` (Verteilen mit Zustimmung).
 
-Weiter unten: die **Kernfrage**, der Abschnitt **🔬 Feste Reihen** und der Expander **📐 Mathematische Formulierung**.
+Wer die Frage zuerst ohne Fachbegriffe verstehen will, öffnet „💬 In einfachen Worten“. Weiter unten: die **Kernfrage**, der Abschnitt **🔬 Feste Reihen** und der Expander **📐 Mathematische Formulierung**.
 """
 )
+
+# erklaerseite:einfach:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/sitzverteilung-erklaert.json, nicht von Hand ändern)
+with st.expander("💬 In einfachen Worten"):
+    st.markdown(
+        """
+Ein Beirat hat eine feste Zahl von Sitzen und soll sie nach den Mitgliederzahlen auf Verbände verteilen. Der rechnerische Anspruch eines Verbands, seine **Quote**, ist nicht von selbst eine ganze Zahl. Also muss gerundet werden, und die Verfahren verteilen den Rest verschieden.
+
+Die Demo rechnet fünf Verfahren ganzzahlig und exakt und zeigt drei Fehler, die dabei passieren können: Ein Verband bekommt weniger als seine abgerundete oder mehr als seine aufgerundete Quote (**Quotenregel**), er verliert einen Sitz, wenn der Beirat wächst (**Alabama-Paradox**), oder er verliert einen Sitz, obwohl er stärker wächst als ein anderer Verband (**Bevölkerungsparadox**). Keines der fünf Verfahren kommt in der Demo ohne einen dieser Fehler aus. Die Zählungen in den festen Reihen gelten nur für die Zufallsbeispiele der Demo, nicht für einen bestimmten Beirat.
+
+[Ausführlich und verständlich erklärt, mit Fachteil](https://sebastianhanisch.net/sitzverteilung-erklaert.html)
+        """
+    )
+# erklaerseite:einfach:end
 
 with st.expander("So wird gerechnet", expanded=True):
     st.markdown(
@@ -246,6 +259,29 @@ st.markdown(
 st.markdown("---")
 
 with st.expander("📐 Mathematische Formulierung"):
+    # erklaerseite:lesehilfe:start (erzeugt von tools/set_demo_explainer.py (Website-Repo) aus tools/content/explainers/sitzverteilung-erklaert.json, nicht von Hand ändern)
+    st.markdown(
+        r"""
+**Lesehilfe.** Gegeben sind $k$ Verbände mit den Mitgliederzahlen $p_i$ und ein Beirat mit $h$ Sitzen. Gesucht ist eine Verteilung der Sitze $s_i$ auf ganze Zahlen, die zusammen $h$ ergeben, und die Frage, ob sie die Quotenregel hält und ohne Alabama- und Bevölkerungsparadox bleibt.
+
+| Symbol | Bedeutung |
+|---|---|
+| $i$, $j$ | Verbände |
+| $k$ | Zahl der Verbände |
+| $p_i$, $P$ | Mitgliederzahl von Verband $i$ bzw. Gesamtzahl der Mitglieder; $P = \sum_i p_i$ |
+| $h$ | Sitze im Beirat (Hausgröße) |
+| $q_i$ | Quote: der rechnerische Anspruch von Verband $i$ auf Sitze, nicht gerundet |
+| $s_i$ | Sitze, die Verband $i$ bekommt (ganze Zahl) |
+| $\lfloor x \rfloor$, $\lceil x \rceil$ | abrunden bzw. aufrunden |
+| $d$ | Divisor: Mitglieder je Sitz, durch den die Mitgliederzahlen geteilt und dann gerundet werden |
+| $t$ | laufende Nummer des Sitzes bei der Quotenmethode |
+| $p_i'$, $s_i'$ | Mitglieder bzw. Sitze von Verband $i$ ein Jahr später |
+| $s_i(h)$ | Sitze von Verband $i$ bei $h$ Sitzen im Beirat |
+
+[Schritt für Schritt erklärt, mit Herleitung und Literatur](https://sebastianhanisch.net/sitzverteilung-erklaert.html#fachleute)
+        """
+    )
+    # erklaerseite:lesehilfe:end
     st.markdown(
         r"""
 **Quote.** Mitglieder $p_i$, Gesamtzahl $P = \sum_i p_i$, Sitze $h$: $q_i = p_i h / P$. **Quotenregel:** $\lfloor q_i \rfloor \le s_i \le \lceil q_i \rceil$.
